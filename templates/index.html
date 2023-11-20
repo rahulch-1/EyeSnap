@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Prediction and Awareness</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://kit.fontawesome.com/c1fc3d2826.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="heading">Eye Disease Prediction and Awareness</h1>
+            <p class="subheading">Learn about various eye diseases, their symptoms, prevention, and treatment options.
+                Raise awareness about eye health and take the necessary steps to protect your vision.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9ZIFyR2aA50p3tYqZnk2KA-FO-WDONXO9g&usqp=CAU"
+                 class="img-fluid" alt="Eye Awareness Image" id="profile-pic">
+        </div>
+        <!-- Add a vertical line to separate the two sides -->
+        <div class="vertical-line"></div>
+        <div class="col-md-6">
+            <div class="upload-section">
+                <h2>Upload Image Here To Identify the Eye Condition</h2>
+                <form action="http://localhost:5000/" id="upload-file" method="post" enctype="multipart/form-data">
+                    <label for="imageUpload" class="upload-label">Choose Image</label>
+                    <input type="file" name="image" id="imageUpload" accept=".png, .jpg, .jpeg">
+
+                    <!-- Add this div to display the selected image -->
+                    <div class="image-preview-container">
+                        <img id="selectedImage" class="img-fluid" alt="Selected Image">
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="button" class="btn btn-primary btn-lg" id="btn-predict">Predict!</button>
+                    </div>
+                </form>
+            </div>
+            <div class="result-section">
+                <h2 class="result-heading"><span id="result"></span></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="faq-heading">
+    <h2>FAQ's</h2>
+    <div class="accordian">
+        <div class="question">
+            <h4><i class="fas fa-question-circle"></i> What is the purpose of this website?</h4>
+            <i class="icon fas fa-caret-down"></i>
+        </div>
+        <div class="answer">
+            <p>This website is designed to predict various types of eye diseases based on uploaded eye images. It utilizes deep learning techniques to classify images into categories such as Normal, Cataract, Diabetic Retinopathy, and Glaucoma.</p>
+        </div>
+    </div>
+
+    <div class="accordian">
+        <div class="question">
+            <h4><i class="fas fa-question-circle"></i> How does the prediction model work?</h4>
+            <i class="icon fas fa-caret-down"></i>
+        </div>
+        <div class="answer">
+            <p>The prediction model uses deep learning algorithms, particularly convolutional neural networks (CNNs), trained on a dataset of eye disease images. Transfer learning techniques, including Inception V3, VGG19, and Xception V3, are employed for enhanced accuracy.</p>
+        </div>
+    </div>
+
+    <div class="accordian">
+        <div class="question">
+            <h4><i class="fas fa-question-circle"></i> Is the website free to use?</h4>
+            <i class="icon fas fa-caret-down"></i>
+        </div>
+        <div class="answer">
+            <p>Yes, the website is currently free to use. Users can upload their eye images and receive predictions without any cost.</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../static/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
